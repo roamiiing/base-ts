@@ -19,7 +19,10 @@ module.exports = {
     // no-unused-vars is triggered on interface methods
     '@typescript-eslint/no-unused-vars': 'error',
     'no-unused-vars': 'off',
+
+    // import/extensions is triggered on importing .ts files
     'import/extensions': 'off',
+
     'no-console': 'off',
   },
   settings: {
@@ -29,5 +32,4 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['docs/**/*.js'],
 };
