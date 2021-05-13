@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "exec": "cross-clear ; npm run lint ; npm start",
+  "ext": "ts,js,json"
+}
