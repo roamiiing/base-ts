@@ -26,15 +26,43 @@ To create a build of this project, run
 
 `npm run build`
 
-This command executes 3 following commands:
+This command executes 2 following commands:
 
-* `npm run lint:strict` - run ESLint and throw error on linting errors
-* `npm test` - run tests with jest
-* `tsc --project ./` - build project
+* `rm -rf dist` - remove the previous output
+* `tsc` - build project
 
 The output directory is set to `dist`.
 
-**Note!** `npm run build` does not contain *environmental variables* from `.env` file.
+---
+
+To start the built version, run
+
+`npm run start:build`
+
+**Note!** The build version **does not contain environmental variables from `.env` file**.
+*Why? Just because it is intended to be used with Docker.*
+
+---
+
+## Working with Docker 🐳
+
+**Note!** This project is designed to be **deployed** as a Docker container. For development use
+the mentioned above commands.
+
+To create an image, run:
+
+`docker build .`
+
+To run a container, run:
+
+```
+docker run -e "MESSAGE=Hello" 576febc33b09
+```
+
+**Note!** that you may have to list the environmental variables to run a container.
+Alternatively, you may specify `--env-file <file>` to pass them from a file.
+
+---
 
 ## More about this setup
 
