@@ -7,9 +7,10 @@
     "dev": "nodemon --config nodemon.json",
     "lint": "eslint --ext ts,js . || true",
     "lint:strict": "eslint --ext ts,js .",
-    "build": "npm run lint:strict && npm test && tsc --project ./",
+    "build": "rm -rf dist && tsc",
     "test": "jest",
-    "start": "ts-node --require dotenv/config src/index.ts"
+    "start": "ts-node --require dotenv/config src/index.ts",
+    "start:build": "node dist/index.js"
   },
   "author": "Vitaliy Lyovkin (web@roamiiing.ru)",
   "license": "ISC",
